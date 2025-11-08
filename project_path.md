@@ -17,9 +17,15 @@ cd && mkdir ${project_name} && cd $_
 ## Create a new rust based project inside the previously generated folder and update the rust binary's system wide to the last stable version
 <!-- KtF -->
 ```bash <!-- markdownlint-disable-line code-block-style -->
-touch README.md \
+touch project_path.md \
+&& touch README.md \
 && touch FROM_HERE.md \
 && ln -s README.md README \
+&& mkdir -p img \
+&& curl --create-dirs --output-dir img -O  "https://raw.githubusercontent.com/MathiasStadler/link_symbol_svg/refs/heads/main/link_symbol.svg" \
+&& echo "[1]: ./img/link_symbol.svg " >>project_path.md \
+&& echo "[1]: ./img/link_symbol.svg " >>FROM_HERE.md \
+&& echo "[1]: ./img/link_symbol.svg " >>README.md \
 && cargo init "." \
 && cargo add rustfmt \
 && rustup component add rustfmt \
@@ -30,15 +36,16 @@ touch README.md \
 && rustup check \
 && rustup toolchain uninstall stable \
 && rustup toolchain install stable \
-&& export RUSTC_WRAPPER=sccache
+&& export RUSTC_WRAPPER=sccache \
 && cargo list --update \
 && rustup update  --force \
 && rustup show \
 && rustup override set stable  \
+&& cargo list --update \
 && mkdir tests \
 && cargo build \
 && cargo run \
-&& cargo run --example example \
+&& cargo run --example example
 ```
 <!-- KtF-->
 ## Show which toolchain is active
@@ -74,6 +81,13 @@ export RUSTC_WRAPPER=sccache
 cargo list --update
 ```
 <!-- KtF-->
+## Install crates pprof [![alt text][1]](https://crates.io/crates/pprof)
+<!-- KtF-->
+```bash <!-- markdownlint-disable-line code-block-style -->
+cargo add pprof
+
+# criterion
+```
 <!-- KtF-->
 >&nbsp;[!TIP] How does "cat << EOF" work in bash? [![alt text][1]](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash)
 > <!-- -->

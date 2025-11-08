@@ -1,10 +1,8 @@
-# /yfinance-rs try out
-<!-- KtF-->
-## Try out [![alt text][1]](https://github.com/gramistella/yfinance-rs.git)
+# yfinance-rs try out [![alt text][1]](https://github.com/gramistella/yfinance-rs.git)
 <!-- KtF-->
 ## Motivation
 <!-- KtF-->
-- Get free daily date from finance.yahoo.com with rust
+- Get free daily infos from finance.yahoo.com with rust
 <!-- KtF-->
 ## Used crates
 <!-- KtF-->
