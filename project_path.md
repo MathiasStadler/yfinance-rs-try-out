@@ -42,6 +42,9 @@ touch project_path.md \
 && rustup show \
 && rustup override set stable  \
 && cargo list --update \
+&& cargo clippy \
+&& cargo fmt --verbose \
+&& cargo fix --workspace \
 && mkdir tests \
 && cargo build \
 && cargo run \
