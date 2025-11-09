@@ -47,6 +47,8 @@ touch project_path.md \
 && cargo run \
 && cargo run --example example
 ```
+
+❌ rust-toolchain - Create rust-toolchain on init project
 <!-- KtF-->
 ## Show which toolchain is active
 <!-- KtF-->
